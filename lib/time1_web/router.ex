@@ -18,6 +18,8 @@ defmodule Time1Web.Router do
 
     get "/", PageController, :index
     resources "/users", UserController
+    resources "/timesheets", TimesheetController
+    resources "/jobs", JobController
   end
 
   # Other scopes may use custom stacks.
