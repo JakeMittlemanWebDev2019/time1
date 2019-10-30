@@ -3,7 +3,7 @@ use Mix.Config
 # Configure your database
 config :time1, Time1.Repo,
   username: "time1",
-  password: "IeZ2ooniapii",
+  password: "Ra3ot5cheij5",
   database: "time1_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
