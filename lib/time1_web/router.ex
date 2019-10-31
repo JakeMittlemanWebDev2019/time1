@@ -4,6 +4,7 @@ defmodule Time1Web.Router do
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
+    plug Time1Web.Plugs.FetchCurrentUser
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
@@ -20,6 +21,8 @@ defmodule Time1Web.Router do
     resources "/users", UserController
     resources "/timesheets", TimesheetController
     resources "/jobs", JobController
+    resources "/sessions", SessionController,
+      only: [:new, :create, :delete], singleton: true
   end
 
   # Other scopes may use custom stacks.
