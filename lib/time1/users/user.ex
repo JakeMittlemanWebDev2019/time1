@@ -5,6 +5,8 @@ defmodule Time1.Users.User do
   schema "users" do
     field :email, :string
     field :name, :string
+    field :is_manager, :boolean
+    field :password, :string
 
     timestamps()
   end
@@ -12,7 +14,7 @@ defmodule Time1.Users.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:email, :name])
-    |> validate_required([:email, :name])
+    |> cast(attrs, [:email, :name, :is_manager, :password])
+    |> validate_required([:email, :name, :is_manager, :password])
   end
 end

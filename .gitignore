@@ -1,0 +1,12 @@
+prod-env.sh
+/_build/
+/cover/
+/deps/
+/doc/
+/.fetch/
+erl_crash.dump
+*.ez
+time1-*.tar
+npm-debug.log
+/assets/node_modules/
+/priv/static/

@@ -28,7 +28,7 @@
             User: <%= @current_user.name %>
             (<%= link("Logout", to: Routes.session_path(@conn, :delete),
               method: :delete) %>)
-          <%= else %>
+          <% else %>
             <%= link("Login", to: Routes.session_path(@conn, :new)) %>
           <% end %>
         </div>
