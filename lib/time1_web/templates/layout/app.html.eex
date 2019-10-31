@@ -26,10 +26,10 @@
         <div class="col-4" text-light>
           <%= if @current_user do %>
             User: <%= @current_user.name %>
-            (<%= link("Logout", to: Routes.session_path(@conn, :delete),
+            (<%= link("Logout", to: Routes.sessions_path(@conn, :delete),
               method: :delete) %>)
           <%= else %>
-            <%= link("Login", to: Routes.session_path(@conn, :new)) %>
+            <%= link("Login", to: Routes.sessions_path(@conn, :new)) %>
           <% end %>
         </div>
       </nav>
