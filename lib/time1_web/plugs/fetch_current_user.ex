@@ -1,4 +1,4 @@
-defmodule Time1Web.Plugs.FetchCurrectUser do
+defmodule Time1Web.Plugs.FetchCurrentUser do
   import Plug.Conn
 
   def init(args), do: args
