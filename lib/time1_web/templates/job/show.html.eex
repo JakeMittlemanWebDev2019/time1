@@ -3,11 +3,6 @@
 <ul>
 
   <li>
-    <strong>Job:</strong>
-    <%= @job.job_id %>
-  </li>
-
-  <li>
     <strong>Name:</strong>
     <%= @job.name %>
   </li>

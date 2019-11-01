@@ -1,0 +1,12 @@
+<%= form_for @conn, Routes.timesheet_path(@conn, :index), fn f -> %>
+  <div class="form-group">
+    <%= label f, :name %>
+    <%= select f, :name, Time1.Users.get_user_names(), class: "form-control" %>
+    <%= error_tag f, :name %>
+  </div>
+
+  <div>
+    <%= submit "Check Timesheet", class: "btn btn-primary" %>
+  </div>
+
+<% end %>

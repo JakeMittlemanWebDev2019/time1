@@ -5,7 +5,6 @@ defmodule Time1.Jobs.Job do
   schema "jobs" do
     field :budget, :integer
     field :desc, :string
-    field :job_id, :integer
     field :name, :string
     field :manager, :id
 
@@ -15,7 +14,7 @@ defmodule Time1.Jobs.Job do
   @doc false
   def changeset(job, attrs) do
     job
-    |> cast(attrs, [:job_id, :name, :desc, :budget])
-    |> validate_required([:job_id, :name, :desc, :budget])
+    |> cast(attrs, [:name, :desc, :budget])
+    |> validate_required([:name, :desc, :budget])
   end
 end

@@ -3,9 +3,9 @@ defmodule Time1Web.TimesheetControllerTest do
 
   alias Time1.Timesheets
 
-  @create_attrs %{hours: 42}
-  @update_attrs %{hours: 43}
-  @invalid_attrs %{hours: nil}
+  @create_attrs %{}
+  @update_attrs %{}
+  @invalid_attrs %{}
 
   def fixture(:timesheet) do
     {:ok, timesheet} = Timesheets.create_timesheet(@create_attrs)

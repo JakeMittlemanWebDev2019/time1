@@ -1,18 +1,16 @@
 <h1>Listing Timesheets</h1>
 
-<table class="table table-striped">
+<table>
   <thead>
     <tr>
-      <th>Hours</th>
 
       <th></th>
     </tr>
   </thead>
   <tbody>
-<%= for timesheet <- @timesheets do %>
+  <%= @name %>
+<%= for timesheet <- Time1.Timesheets.get_timesheets_by_name(Time1.Users.get_user_by_email("RSam@gmail.com").id) do %>
     <tr>
-      <td><%= timesheet.hours %></td>
-
       <td>
         <span><%= link "Show", to: Routes.timesheet_path(@conn, :show, timesheet) %></span>
         <span><%= link "Edit", to: Routes.timesheet_path(@conn, :edit, timesheet) %></span>

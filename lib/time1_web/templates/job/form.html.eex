@@ -5,23 +5,19 @@
     </div>
   <% end %>
 
-  <%= label f, :job_id %>
-  <%= number_input f, :job_id %>
-  <%= error_tag f, :job_id %>
-
   <%= label f, :name %>
-  <%= text_input f, :name %>
+  <%= text_input f, :name, class: "form-control"  %>
   <%= error_tag f, :name %>
 
   <%= label f, :desc %>
-  <%= textarea f, :desc %>
+  <%= textarea f, :desc, class: "form-control" %>
   <%= error_tag f, :desc %>
 
   <%= label f, :budget %>
-  <%= number_input f, :budget %>
+  <%= number_input f, :budget, class: "form-control" %>
   <%= error_tag f, :budget %>
 
   <div>
-    <%= submit "Save" %>
+    <%= submit "Save", class: "btn btn-primary" %>
   </div>
 <% end %>

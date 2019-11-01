@@ -14,6 +14,10 @@ defmodule Time1Web.TimesheetController do
     render(conn, "new.html", changeset: changeset)
   end
 
+  def create(conn, params) do
+    IO.puts(@name)
+  end
+
   def create(conn, %{"timesheet" => timesheet_params}) do
     case Timesheets.create_timesheet(timesheet_params) do
       {:ok, timesheet} ->

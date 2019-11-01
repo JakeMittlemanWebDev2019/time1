@@ -37,6 +37,11 @@ defmodule Time1.Timesheets do
   """
   def get_timesheet!(id), do: Repo.get!(Timesheet, id)
 
+  def get_timesheets_by_name(id) do
+    Repo.all(Timesheet)
+    |> Enum.map(fn sheet -> if (sheet.id == id) do sheet end end)
+  end
+
   @doc """
   Creates a timesheet.
 

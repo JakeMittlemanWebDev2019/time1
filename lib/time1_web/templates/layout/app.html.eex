@@ -15,17 +15,29 @@
         </div>
         <div class="col-8">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">All Photos</a>
-            </li>
-            <li class="nav-item">
+            <%= if @current_user && @current_user.is_manager do %>
+              <li class="nav-item active">
+                <%= link("Jobs", to: Routes.job_path(@conn, :index)) %>
+              </li>
+              <li class="nav-item active">
+                  <%= link("Timesheets", to: Routes.userselect_path(@conn, :new))%>
+              </li>
+            <%= else %>
+              <li>
+                <%= link("Log Your Time", to: Routes.task_path(@conn, :new)) %>
+              </li>
+            <% end %>
+                <%# <a class="nav-link" href="#">All Photos</a> %>
+              
+            <%# <li class="nav-item">
               <a class="nav-link" href="#">Your Photos</a>
-            </li>
+            </li> %>
           </ul>
         </div>
         <div class="col-4" text-light>
           <%= if @current_user do %>
             User: <%= @current_user.name %>
+            <br>
             (<%= link("Logout", to: Routes.session_path(@conn, :delete),
               method: :delete) %>)
           <% else %>

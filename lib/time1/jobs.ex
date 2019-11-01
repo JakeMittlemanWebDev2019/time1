@@ -21,6 +21,11 @@ defmodule Time1.Jobs do
     Repo.all(Job)
   end
 
+  def get_job_ids do
+    Repo.all(Job)
+    |> Enum.map(fn job -> job.name end)
+  end
+
   @doc """
   Gets a single job.
 

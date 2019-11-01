@@ -1,6 +1,6 @@
 <h1>Listing Jobs</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Job</th>
@@ -14,10 +14,10 @@
   <tbody>
 <%= for job <- @jobs do %>
     <tr>
-      <td><%= job.job_id %></td>
+      <td><%= job.id %></td>
       <td><%= job.name %></td>
       <td><%= job.desc %></td>
-      <td><%= job.budget %></td>
+      <td><%= "$" <> Integer.to_string(job.budget) %></td>
 
       <td>
         <span><%= link "Show", to: Routes.job_path(@conn, :show, job) %></span>

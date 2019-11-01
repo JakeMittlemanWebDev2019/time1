@@ -3,9 +3,9 @@ defmodule Time1.Timesheets.Timesheet do
   import Ecto.Changeset
 
   schema "timesheets" do
-    field :hours, :integer
-    field :user_id, :id
-    field :job_id, :id
+    field :worker, :id, null: false
+
+    has_many :tasks, Time1.Tasks.Task
 
     timestamps()
   end
@@ -13,7 +13,7 @@ defmodule Time1.Timesheets.Timesheet do
   @doc false
   def changeset(timesheet, attrs) do
     timesheet
-    |> cast(attrs, [:hours])
-    |> validate_required([:hours])
+    |> cast(attrs, [])
+    |> validate_required([])
   end
 end

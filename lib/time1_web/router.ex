@@ -21,6 +21,8 @@ defmodule Time1Web.Router do
     resources "/users", UserController
     resources "/timesheets", TimesheetController
     resources "/jobs", JobController
+    resources "/tasks", TaskController
+    resources "/userselect", UserselectController
     resources "/sessions", SessionController,
       only: [:new, :create, :delete], singleton: true
   end

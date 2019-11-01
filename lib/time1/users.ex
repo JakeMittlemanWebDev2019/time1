@@ -63,6 +63,11 @@ defmodule Time1.Users do
     Repo.get(User, id)
   end
 
+  def get_user_names() do
+    Repo.all(User)
+    |> Enum.map(fn user -> user.name end)
+  end
+
   @doc """
   Updates a user.
 
