@@ -1,0 +1,37 @@
+
+Web Dev Fall 2019 HW06 Status
+
+Answer the following questions:
+
+
+1. What's your name?
+Jake Mittleman
+
+
+2. What's the URL of the github repo with your work for this HW?
+https://github.com/JakeMittlemanWebDev2019/time1
+
+
+3. What's the version number of your github release?
+1
+
+
+4. What's the URL that you deployed to?
+time1.paperdogg.com
+
+
+5. Is your app functionality complete? If not, what's missing?
+No, it's missing submitting timesheets, approving timesheets, basically everything involving timesheets. You can log in though!
+
+
+
+6. Is your app properly deployed? If not, what went wrong?
+It's deployed but bootstrap isn't working. I kept getting weird errors I didn't know how to solve
+
+
+
+
+And here's a list of tasks for grading comments. Just leave this here:
+ - Development
+ - Deployment
+ - Submission
