@@ -63,6 +63,10 @@ defmodule Time1.Users do
     Repo.get(User, id)
   end
 
+  def get_userid_by_name(name) do
+    Repo.get_by(User, name: name).id
+  end
+
   def get_user_names() do
     Repo.all(User)
     |> Enum.map(fn user -> user.name end)

@@ -8,8 +8,8 @@
     </tr>
   </thead>
   <tbody>
-  <%= @name %>
-<%= for timesheet <- Time1.Timesheets.get_timesheets_by_name(Time1.Users.get_user_by_email("RSam@gmail.com").id) do %>
+  <h2><%= @name <> "'s Timesheets" %></h2>
+<%= for timesheet <- Time1.Timesheets.get_timesheets_by_name(Time1.Users.get_userid_by_name(@name)) do %>
     <tr>
       <td>
         <span><%= link "Show", to: Routes.timesheet_path(@conn, :show, timesheet) %></span>

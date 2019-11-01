@@ -10,15 +10,18 @@ defmodule Time1Web.TimesheetController do
   end
 
   def new(conn, _params) do
-    changeset = Timesheets.change_timesheet(%Timesheet{})
+    changeset = Timesheets.change_timesheet(%Timesheet{tasks: [
+        %Time1.Tasks.Task{}
+    ]})
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, params) do
-    IO.puts(@name)
+  def create(conn, %{"name" => name}) do
+    render(conn, "index.html", name: name)
   end
 
   def create(conn, %{"timesheet" => timesheet_params}) do
+    timesheet_params = Map.put(timesheet_params, "worker", conn.assigns[:current_user].id)
     case Timesheets.create_timesheet(timesheet_params) do
       {:ok, timesheet} ->
         conn

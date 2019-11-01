@@ -13,7 +13,7 @@ defmodule Time1.Timesheets.Timesheet do
   @doc false
   def changeset(timesheet, attrs) do
     timesheet
-    |> cast(attrs, [])
+    |> cast(attrs, [:worker])
     |> validate_required([])
   end
 end

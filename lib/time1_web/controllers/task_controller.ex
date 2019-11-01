@@ -14,7 +14,13 @@ defmodule Time1Web.TaskController do
     render(conn, "new.html", changeset: changeset)
   end
 
+  def create(conn, %{"tasks" => tasks}) do
+
+    Tasks.create_task(tasks["0"])
+  end
+
   def create(conn, %{"task" => task_params}) do
+    IO.inspect(task_params)
     case Tasks.create_task(Map.put(task_params, :worker, conn.assigns[:current_user])) do
       {:ok, task} ->
         conn

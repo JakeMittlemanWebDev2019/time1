@@ -1,6 +1,17 @@
 <h1>Show Timesheet</h1>
 
 <ul>
+  <li>
+    <%= @timesheet.worker %>
+  </li>
+
+  <table>
+  <%= for task <- Time1.Tasks.list_tasks() do %>
+    <tr>
+      <td>task.note</td>
+    </tr>
+  <%end%>
+  </table>
 
 </ul>
 

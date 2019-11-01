@@ -5,6 +5,24 @@
     </div>
   <% end %>
 
+  <%= inputs_for f, :tasks, [append: []], fn p -> %>
+        <%= label p, :hours %>
+        <%= number_input p, :hours, class: "form-control" %>
+        <%= error_tag p, :hours %>
+
+        <%= label p, :note %>
+        <%= text_input p, :note, class: "form-control" %>
+        <%= error_tag p, :note %>
+
+        <%= label p, :worker %>
+        <br>
+        <%= @current_user.id %>
+
+        <%= label p, :job %>
+        <%= select p, :job, Time1.Jobs.get_job_ids(), class: "form-control" %>
+        <%= error_tag p, :job %>
+  <% end %>
+
   <div>
     <%= submit "Save" %>
   </div>
